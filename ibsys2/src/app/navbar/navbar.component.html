@@ -1,0 +1,24 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo" width="60">
+      <span>BIKE PLANNER PRO</span>
+    </div>
+    <div class="languages">
+      <button mat-button *ngFor="let lang of languages" (click)="setLanguage(lang)">
+        {{ lang | uppercase }}
+      </button>
+    </div>
+    <mat-vertical-stepper [selectedIndex]="selectedStep" orientation="vertical">
+      <mat-step *ngFor="let step of steps; let i = index" [completed]="i < selectedStep">
+        <ng-template matStepLabel>{{ step.label }}</ng-template>
+        <div *ngIf="selectedStep === i">
+          <p>{{ step.description }}</p>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
