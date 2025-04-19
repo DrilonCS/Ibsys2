@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ibsys2": {
+    "Ibsys2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ibsys2:build:production"
+              "buildTarget": "Ibsys2:build:production"
             },
             "development": {
-              "buildTarget": "ibsys2:build:development"
+              "buildTarget": "Ibsys2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,8 +94,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
